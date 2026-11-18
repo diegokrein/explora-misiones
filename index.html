@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explorá Misiones</title>
+    <link
+      rel="stylesheet"
+      href="data/leaflet.css"
+    >
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="topbar" aria-label="Panel del juego">
+        <div>
+          <p class="eyebrow">Misiones, Argentina</p>
+          <h1>Explorá Misiones</h1>
+          <select id="mode" aria-label="Elegir test"><option value="water">Cursos de agua</option><option value="land">Departamentos</option><option value="seats">Cabeceras</option></select>
+        </div>
+
+        <div class="prompt-card" aria-live="polite">
+          <span class="prompt-label" id="instruction">Tocá el recorrido de</span>
+          <strong id="targetName">Cargando...</strong>
+          <details id="hint"><summary>Pista</summary><span id="clue"></span></details>
+        </div>
+
+        <div class="stats" aria-label="Estadísticas">
+          <span><strong id="score">0</strong> correctas</span>
+          <span><strong id="remaining">17</strong> restantes</span>
+          <span><strong id="attempts">0</strong> intentos</span>
+        </div>
+
+        <button id="resetButton" type="button">Reiniciar</button>
+        <div id="answers" role="group" aria-label="Elegí la cabecera"></div>
+      </section>
+
+      <section class="map-wrap" aria-label="Mapa interactivo">
+        <div id="map"></div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script
+      src="data/leaflet.js"
+    ></script>
+    <script src="data/departamentos.js"></script>
+    <script src="data/cursos.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
